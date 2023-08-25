@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(247, 249, 252);
+}
+
+.center {
+    text-align: center;
+}
+
+wLin {
+    color: rgb(209, 16, 16);
+}
+
+table#T1 {
+    text-align: justify;
+}
+
+table#T2 {
+    text-align: center;
+    margin: auto;
+}
+

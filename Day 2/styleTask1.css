@@ -1,0 +1,31 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(240, 240, 238);
+}
+
+w {
+    color: rgb(187, 84, 43);
+    font-size: 105%;
+}
+
+h {
+    color: red;
+}
+
+uk {
+    font-size: 80%;
+}
+
+.center {
+    text-align: center;
+}
+
+table#T2 {
+    margin: auto;
+}
+
+
+
+
+
