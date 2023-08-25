@@ -1,0 +1,67 @@
+* {
+    color: rgb(148, 45, 54);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: rgb(242, 247, 245);
+    padding: 5px;
+}
+
+header {
+    text-align: center;
+    margin: 30px 10px 70px 20px;
+}
+
+.card1 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    height: 550px;
+    border-radius: 10%;
+    margin: 70px;
+    border: 1px solid rgb(180, 175, 175);
+    padding: 7px;
+}
+
+.card2 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    height: 550px;
+    border-radius: 10%;
+    margin: -635px 340px -30px 360px;
+    border: 1px solid rgb(180, 175, 175);
+    padding: 7px;
+}
+
+.card3 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    height: 550px;
+    border-radius: 10%;
+    margin: -565px -440px -40px 650px;
+    border: 1px solid rgb(180, 175, 175);
+    padding: 7px;
+}
+
+.card4 {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    width: 250px;
+    height: 550px;
+    border-radius: 10%;
+    margin: -565px -640px -30px 940px;
+    border: 1px solid rgb(180, 175, 175);
+    padding: 7px;
+}
+
+footer {
+    margin: 90px 20px 30px 70px;
+    text-align: center;
+}

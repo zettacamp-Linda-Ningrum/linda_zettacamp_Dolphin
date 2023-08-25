@@ -1,0 +1,43 @@
+body {
+    background-color: beige;
+}
+
+header {
+    text-align: center;
+}
+
+.image {
+    text-align: center;
+}
+
+img {
+    height: 300px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.lindaprofile {
+    text-align: center;
+}
+
+table {
+    text-align: center;
+    width: 300px;
+    margin-right: 500px;
+    margin-left: 500px;
+    font-size: 19px;
+}
+
+span {
+    font-size: 18px;
+    color: rgb(112, 45, 18);
+    background-color: rgb(247, 226, 188);
+}
+
+span#a {
+    font-size: 20px;
+}
+
+footer {
+    text-align: center;
+}
