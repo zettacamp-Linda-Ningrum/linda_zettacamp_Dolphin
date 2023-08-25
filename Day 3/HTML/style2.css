@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(238, 242, 252);
+}
+
+.pagetitle {
+    margin-left: 220px;
+    margin-right: 220px;
+    background-color: azure;
+    height: 37px;
+    padding-left: 20px;
+    position: relative;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.header {
+    background-image: url(../Assets/Img/header.jpg);
+    background-position: center;
+    color: aliceblue;
+    text-align: center;
+    height: 378px;
+    width: 840px;
+    margin-top: 10px;
+    margin-left: 220px;
+}
+
+.menu_navigasi {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-left: 220px;   
+    margin-right: 220px;
+    margin-top: 10px;
+    height: 30px;
+    text-align: center;
+    background-color: azure;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+a:hover, a:active, a:visited {
+    color: rgb(189, 71, 71);
+    background-color: rgb(229, 199, 231);
+}
+
+.main_content {
+    background-color: rgb(250, 204, 218);
+    height: 650px;
+    margin-top: 10px;
+    margin-right: 220px;
+    margin-left: 220px;
+    margin-bottom: -195px;
+    padding-top: 10px;
+}
+
+.main_contentRegister {
+    background-color: rgb(250, 204, 218);
+    height: 300px;
+    margin-top: 10px;
+    margin-right: 220px;
+    margin-left: 220px;
+    margin-bottom: -195px;
+    padding-top: 10px;
+}
+
+.main_contentSongListing {
+    background-color: rgb(250, 204, 218);
+    height: 1030px;
+    margin-top: 10px;
+    margin-right: 220px;
+    margin-left: 220px;
+    margin-bottom: -195px;
+    padding-top: 10px;
+}
+
+.main_contentAlbum {
+    background-color: rgb(250, 204, 218);
+    height: 2110px;
+    margin-top: 10px;
+    margin-right: 220px;
+    margin-left: 220px;
+    margin-bottom: -195px;
+    padding-top: 10px;   
+}
+
+table#T1 {
+    height: 100px;
+    width: 200px;
+    padding: 10px;
+}
+
+footer {
+    background-color: rgb(189, 186, 186);
+    margin-right: 220px;
+    margin-left: 220px;
+    margin-bottom: 20px;
+    margin-top: 200px;
+    text-align: center;
+    height: 14px;
+    color: rgb(30, 31, 31);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
