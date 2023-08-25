@@ -1,0 +1,249 @@
+body {
+    background-color: azure;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: center; 
+    background-color: rgb(19, 67, 107);
+    color: azure;
+    height: 9vh;
+    padding-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.position {
+    position: sticky;
+    top: 0;
+}
+
+#shape {
+    font-size: 1rem;
+}
+
+a:hover {
+    background-color: rgb(146, 207, 248);
+    height: 10vh;
+    width: 15vw;
+    text-align: center;
+    padding-bottom: 9px;
+}
+
+.header-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 270px;
+    margin: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 65vh;
+    margin-left: 140px;
+    flex-wrap: wrap;
+}
+
+.multimedia {
+    margin-top: 30px;
+    margin-right: -240px;
+}
+
+.desc1 {
+    color: rgb(6, 41, 73);
+    margin-top: 240px;
+    margin-right: 110px;
+    margin-bottom: -60px;
+}
+
+.desc2 {
+    color: rgb(6, 41, 73);
+    text-align: center;
+    margin: 10px 100px 10px 100px;
+}
+
+.multimedia-about {
+    margin-top: 30px;
+    margin-right: -160px;
+}
+
+.home2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 85vh;
+    margin-top: 10px;
+    margin-left: 140px;
+    flex-wrap: wrap;
+}
+
+.desc-title {
+    color: rgb(6, 41, 73);
+}
+
+.card {
+    display: inline;
+    background-color: rgb(253, 253, 253);
+    height: 66vh;
+    width: 20vw;
+    margin-top: 80px;
+    margin-right: 10px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+    text-align: center;
+    color: rgb(6, 41, 73);
+}
+
+.desc1-about {
+    color: rgb(6, 41, 73);
+    margin-top: 240px;
+    margin-right: 70px;
+    margin-bottom: -60px;
+}
+
+.about-me {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 95vh;
+    margin-left: 140px;
+    flex-wrap: wrap;
+}
+
+.contact-me {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 60vh;
+    margin-left: 140px;
+}
+
+.content-contact {
+    color: rgb(6, 41, 73);
+    margin-top: 30px;
+}
+
+.shopping-list-title {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 13vh;
+    margin-left: 140px;
+    color: rgb(6, 41, 73);
+}
+
+.shopping-list-card {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 70vh;
+    margin-left: 140px;
+}
+
+.shopping-list-card2 {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 75vh;
+    margin-left: 140px;
+}
+
+.card2 {
+    display: inline;
+    background-color: rgb(253, 253, 253);
+    height: 66vh;
+    width: 20vw;
+    margin-top: 10px;
+    margin-right: 10px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+    text-align: center;
+    color: rgb(6, 41, 73);
+}
+
+.shopping-list-additems {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 12vh;
+    margin-left: 140px;
+    color: rgb(6, 41, 73);
+}
+
+.button-additems {
+    background-color: azure;
+    text-align: center;
+    height: 50px;
+    width: 150px;
+    border-radius: 5%;
+    box-shadow: 0 9px 10px 0 rgba(71, 70, 70, 0.2);
+}
+
+.list-items {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 80vh;
+    margin-left: 140px;
+}
+
+.form-list-additems {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 35vh;
+    margin-left: 140px;
+    color: rgb(6, 41, 73);
+}
+
+.form-additems {
+    background-color: rgb(6, 41, 73);
+    color: azure;
+    text-align: left;
+    height: 200px;
+    width: 320px;
+    box-shadow: 0 9px 10px 0 rgba(71, 70, 70, 0.2);
+}
+
+.item-list-table {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(146, 207, 248);
+    width: 81%;
+    height: 80vh;
+    margin-left: 140px;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(19, 67, 107);
+    color: azure;
+    height: 2vh;
+}
