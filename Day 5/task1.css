@@ -1,0 +1,71 @@
+body {
+    background-color: beige;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(90, 88, 87); 
+    color: beige; 
+    margin-bottom: 20px;
+    height: 5rem; 
+    padding: 1px;
+    text-align: center;
+}
+
+.first_row {
+    margin-top: 0px;
+}
+
+.card1 {
+    background-color: rgb(253, 253, 253);
+    height: 500px;
+    width: 250px;
+    margin: 30px 140px 30px 220px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+}
+
+.second_row {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card2 {
+    background-color: rgb(253, 253, 253);
+    height: 500px;
+    width: 250px;
+    margin: -530px 140px 30px 525px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+}
+
+.third_row {
+    margin-bottom: 0px;
+}
+
+.card3 {
+    background-color: rgb(253, 253, 253);
+    height: 500px;
+    width: 250px;
+    margin: -532px 140px 30px 830px;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+}
+
+a:hover {
+    font-size: 17px;
+}
+
+p::first-letter {
+    font-size: 15px;
+}
+
+footer {
+    background-color: rgb(90, 88, 87); 
+    height: 15px;
+}
