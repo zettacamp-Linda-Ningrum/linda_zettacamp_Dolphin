@@ -1,0 +1,59 @@
+body {
+    background-color: beige;
+}
+
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(90, 88, 87); 
+    color: beige; 
+    height: 10vh;
+    width: 100vw;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.position {
+    position: sticky;
+    top: 0;
+}
+
+#shape {
+    font-style: italic;
+}
+
+a:hover {
+    background-color: rgb(43, 46, 46);
+}
+
+p::first-letter {
+    font-size: 1rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 88%;
+    margin-left: 5rem;
+}
+
+.card {
+    background-color: rgb(253, 253, 253);
+    height: 500px;
+    width: 250px;
+    margin: 1rem;
+    box-shadow: 0 9px 10px 0 rgba(0,0,0,0.2);
+    border-radius: 4%;
+}
+
+footer {
+    background-color: rgb(90, 88, 87); 
+    height: 2vh;
+    width: 100vw;
+    color: beige;
+}
