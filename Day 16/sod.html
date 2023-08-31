@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SOD - Local Storage Day 1</title>
+    </head>
+    <body>
+        <script>
+            const user = {username: 'linddayyu', password: '12345'};
+            localStorage.setItem('login', JSON.stringify(user))
+            localStorage.setItem('name', 'Linda')
+            const nama = localStorage.getItem('name');
+            console.log(nama);
+            const forLogin = JSON.parse(localStorage.getItem('login')) 
+            console.log(forLogin);
+            // localStorage.removeItem('name')
+            // localStorage.clear()
+
+            let arrTrybook = ['Melodylan', 'Invalidite', 'Paper Towns'];
+            localStorage.setItem('bookList', JSON.stringify(arrTrybook));
+            const forBookList = JSON.parse(localStorage.getItem('bookList'));
+            console.log(forBookList);
+        </script>
+    </body>
+</html>

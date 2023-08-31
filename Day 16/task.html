@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Inventory | Task Local Storage Day 1</title>
+    <link rel="icon" href="assets/img/icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 75%;
+            margin: 20px auto;
+            border: 1px solid #ccc; 
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Inventory</h1>
+    <table id="bookTable">
+        <!-- table headers -->
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Total Count</th>
+                <th>Author</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="tblbody"></tbody>
+    </table>
+</body>
+</html>
+
+<script type="text/javascript">
+    // const books = [
+    //     {
+    //         bookName: "Melodylan",
+    //         totalCount: 5,
+    //         author: "Asriaci",
+    //         description: "MeloDylan is a romantic genre novel by Asriaci which was first published on the Wattpad application and successfully ranked first in the teenfiction category on February 15, 2017."
+    //     },
+    //     {
+    //         bookName: "Paper Towns",
+    //         totalCount: 3,
+    //         author: "John Green",
+    //         description: "Paper Towns is a novel dedicated by author, John Green, especially for adult and youth readers, and published on October 16, 2008, by Dutton Books."
+    //    },
+    //     {
+    //         bookName: "Invalidite",
+    //         totalCount: 2,
+    //         author: "Faradita",
+    //         description: "This novel tells the story of a strong girl named Pelita Senja, who, despite her physical limitations, is able to show that compassion, being a useful human being and caring for others is much more meaningful than mere physical perfection."
+    //     }
+    //     // Add more book data as needed
+    // ];
+
+    // nge declare new var untuk mendapatkan elemen tbody dari tabel dengan id 'tblbody'
+    const tableBody = document.getElementById('tblbody');
+
+    // memanggil fungsi getBook() untuk menampilkan data buku saat halaman dimuat
+    getBook();
+
+    // fungsi untuk menampilkan data buku dalam tabel
+    function getBook() {
+        // mengambil data buku dari penyimpanan lokal atau gunakan array kosong jika tidak ada data
+        const bookData = JSON.parse(localStorage.getItem('books')) || [];
+
+        // untuk mengosongkan isi elemen tbody untuk menghindari duplikasi data
+        tableBody.innerHTML = '';
+
+        // perulangan melalui tiap data buku untuk menambahkan baris baru ke dalam elemen tbody
+        bookData.forEach((value, index) => {
+            // membuat baris tabel dengan data yang diperoleh dari objek buku
+            const tableRow = `
+                <tr id="${value.id}">
+                    <td>${index + 1}</td> 
+                    <td>${value.title}</td>
+                    <td>${value.totalCount}</td>
+                    <td>${value.author}</td>
+                    <td>${value.description}</td>
+                    <td>
+                        <button onclick='editBook(${value.id})'>Edit</button>
+                        <button onclick='deleteBook(${value.id})'>Delete</button>
+                    </td>
+                </tr>`;
+            // menambahkan baris tabel ke dalam elemen tbody
+            tableBody.innerHTML += tableRow;
+        });
+
+        // membuat baris formulir untuk menambahkan data buku baru
+        const createNewRowForm = `
+            <tr>
+                <td></td>
+                <td><input type="text" id="newTitle" placeholder="Judul" /></td>
+                <td><input type="number" id="newCount" placeholder="Jumlah Total" /></td>
+                <td><input type="text" id="newAuthor" placeholder="Penulis" /></td>
+                <td><textarea id="newDesc" placeholder="Deskripsi"></textarea></td>
+                <td><button onclick='addBook()'>Save</button></td>
+            </tr>`;
+        // menambahkan baris formulir ke dalam elemen tbody
+        tableBody.innerHTML += createNewRowForm;
+    }
+
+    // fungsi untuk menambahkan buku baruu
+    function addBook() {
+        // untuk mendapatkan timestamp saat ini sebagai ID baru untuk buku
+        const newId = Date.now();
+        
+        // mengambil nilai input untuk judul, jumlah total, pengarang, dan deskripsi dari elemen HTML
+        const newTitle = document.getElementById('newTitle').value;
+        const newCount = parseInt(document.getElementById('newCount').value);
+        const newAuthor = document.getElementById('newAuthor').value;
+        const newDesc = document.getElementById('newDesc').value;
+
+        // membuat objek buku baru dengan data yang diperoleh
+        const newBook = {
+            id: newId,
+            title: newTitle,
+            totalCount: newCount,
+            author: newAuthor,
+            description: newDesc,
+        };
+
+        // mengambil data buku yang ada dari penyimpanan lokal atau menginisialisasi array kosong jika belum ada
+        let books = JSON.parse(localStorage.getItem('books')) || [];
+        
+        // menambahkan buku baru ke dalam array buku dengan push
+        books.push(newBook);
+        
+        // menyimpan array buku yang sudah diperbarui kembali ke penyimpanan lokal
+        localStorage.setItem('books', JSON.stringify(books));
+
+        // memanggil fungsi getBook() untuk memperbarui tampilan tabel buku
+        getBook();
+    }
+
+    function editBook(bookId) {
+        // mengambil elemen baris (tr) berdasarkan ID buku yang akan diedit
+        const row = document.getElementById(bookId);
+        
+        // mengambil semua elemen sel (td) dari baris yang sedang diedit
+        const rowData = row.querySelectorAll('td');
+
+        // untuk mengambil nilai teks dari sel-sel tertentu yang akan diedit (judul, jumlah total, pengarang, dan deskripsi)
+        const title = rowData[1].innerText;
+        const totalCount = rowData[2].innerText;
+        const author = rowData[3].innerText;
+        const desc = rowData[4].innerText;
+
+        // mengganti konten sel judul dengan input berisi nilai dari masing2 sel saat ini
+        rowData[1].innerHTML = `<input type="text" class='trData' value="${title}">`;
+        rowData[2].innerHTML = `<input type="number" class='trData' value="${totalCount}">`;
+        rowData[3].innerHTML = `<input type="text" class='trData' value="${author}">`;
+        rowData[4].innerHTML = `<textarea class='trData'>${desc}</textarea>`;
+
+        // mengambil sel terakhir dari baris yang sedang diedit (berisi tombol Edit dan Delete)
+        const actionsCell = row.querySelector('td:last-child');
+        
+        // mengganti konten sel terakhir dengan tombol "Save" yang akan menyimpan perubahan
+        actionsCell.innerHTML = `<button onclick="saveEditedBook(${bookId})">Save</button>`;
+    }
+
+    function saveEditedBook(bookId) {
+        // untuk mendapatkan elemen baris berdasarkan ID buku yang akan disimpan perubahannya
+        const row = document.getElementById(bookId);
+        // untuk mendapatkan semua elemen <td> dalam baris tersebut
+        const rowData = row.querySelectorAll('td');
+
+        // untuk mndapatkan nilai yang udah diperbarui dari elemen input dan textarea dalam kolom kedua hingga kelima
+        const updatedTitle = rowData[1].querySelector('input').value;
+        const updatedTotalCount = rowData[2].querySelector('input').value;
+        const updatedAuthor = rowData[3].querySelector('input').value;
+        const updatedDesc = rowData[4].querySelector('textarea').value;
+
+        // untuk mendapatkan data buku dari localStorage atau inisialisasi array kosong jika tidak ada
+        const books = JSON.parse(localStorage.getItem('books')) || [];
+        // mencari indeks buku yang sesuai dengan ID buku yang akan diubah
+        const bookIndex = books.findIndex((book) => book.id === bookId);
+
+        // untuk memperbarui data buku jika ditemukan indeks yang sesuai
+        if (bookIndex !== -1) {
+            books[bookIndex].title = updatedTitle;
+            books[bookIndex].totalCount = parseInt(updatedTotalCount);
+            books[bookIndex].author = updatedAuthor;
+            books[bookIndex].description = updatedDesc;
+            // menyimpan data buku yang telah diperbarui kembali ke localStorage
+            localStorage.setItem('books', JSON.stringify(books));
+        }
+
+        // untuk display data buku yang telah diperbarui di dalam elemen <td> yang sesuai
+        rowData[1].innerHTML = updatedTitle;
+        rowData[2].innerHTML = updatedTotalCount;
+        rowData[3].innerHTML = updatedAuthor;
+        rowData[4].innerHTML = updatedDesc;
+
+        // mendapatkan elemen <td> terakhir dalam baris yang berisi tombol "Edit" dan "Delete"
+        const actionsCell = row.querySelector('td:last-child');
+        // menampilkan tombol "Edit" dan "Delete" kembali setelah penyimpanan data selesai
+        actionsCell.innerHTML = `
+            <button onclick="editBook(${bookId})">Edit</button>
+            <button onclick="deleteBook(${bookId})">Delete</button>`;
+    }   
+
+    function deleteBook(bookId) {
+        // untuk mendapatkan data buku dari localStorage atau inisialisasi array kosong jika tidak ada
+        let books = JSON.parse(localStorage.getItem('books')) || [];
+        // menggunakan fungsi filter() untuk menyaring buku dengan ID yang tidak sesuai dengan yang akan dihapus
+        books = books.filter((book) => book.id !== bookId);
+        // menyimpan kembali data buku yang telah disaring kembali ke localStorage
+        localStorage.setItem('books', JSON.stringify(books));
+
+        // memanggil fungsi getBook() untuk memperbarui tampilan tabel setelah buku berhasi dihapus
+        getBook();
+    }
+
+
+// Create
+// localStorage.setItem('bookList', JSON.stringify(books));
+
+// Remove
+// localStorage.removeItem(`bookList`)
+
+// Update
+// const secondBookList = localStorage.getItem('bookList');
+// console.log(secondBookList);
+
+// nge clear
+// localStorage.clear()
+    
+</script>
